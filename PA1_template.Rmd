@@ -108,3 +108,5 @@ WeeklyMeanSteps = setNames(aggregate(cleanDF$steps,
 xyplot(steps ~ interval|dayType, data=WeeklyMeanSteps,type='l', 
        ylab="Number of Steps")
 ```
+
+The patterns of activity appear steadier during the weekend and with more variability on the weekdays.

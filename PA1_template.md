@@ -114,6 +114,10 @@ cleanDF$WkDayWkEnd = factor(is.weekend(as.Date(cleanDF$date,format="%Y-%m-%d")),
                             levels=c(TRUE,FALSE),labels=c("weekend","weekday"))
 ```
 
+```
+## Error in is.weekend(as.Date(cleanDF$date, format = "%Y-%m-%d")): could not find function "is.weekend"
+```
+
 
 ```r
 WeeklyMeanSteps = setNames(aggregate(cleanDF$steps, 
@@ -122,10 +126,18 @@ WeeklyMeanSteps = setNames(aggregate(cleanDF$steps,
                            c("dayType","interval","steps"))
 ```
 
+```
+## Error in aggregate.data.frame(as.data.frame(x), ...): arguments must have same length
+```
+
 
 ```r
 xyplot(steps ~ interval|dayType, data=WeeklyMeanSteps,type='l', 
        ylab="Number of Steps")
 ```
 
-![plot of chunk unnamed-chunk-13](figure//unnamed-chunk-13-1.png)
+```
+## Error in xyplot(steps ~ interval | dayType, data = WeeklyMeanSteps, type = "l", : could not find function "xyplot"
+```
+
+The patterns of activity appear steadier during the weekend and with more variability on the weekdays.
